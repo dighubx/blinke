@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <!-- Title Tag -->
+  <title>{% block title %}Blinke Technologies{% endblock %}</title>
+
+  <!-- Meta Description -->
+  <meta name="description" content="Blinke Technologies offers innovative IT solutions for startups and enterprises, including cloud solutions, AI, automation, and cybersecurity services. Transform your business today with Blinke." />
+
+  <!-- Meta Keywords -->
+  <meta name="keywords" content="IT solutions, startup IT services, AI automation, cloud solutions, cybersecurity, software development, technology services, enterprise IT, Blinke Technologies" />
+
+  <!-- Meta Robots (to guide search engines) -->
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph Meta Tags (for better social media sharing) -->
+  <meta property="og:title" content="Blinke Technologies | Innovative IT Solutions" />
+  <meta property="og:description" content="Blinke Technologies offers cutting-edge IT solutions for startups and enterprises, focusing on custom software, cloud services, AI, and cybersecurity." />
+  <meta property="og:image" content="https://www.blinke.in/static/logo.png" />
+  <meta property="og:url" content="https://www.blinke.in" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Blinke Technologies" />
+
+  <!-- Twitter Card Meta Tags (for better Twitter sharing) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blinke Technologies | Innovative IT Solutions" />
+  <meta name="twitter:description" content="Blinke Technologies offers cutting-edge IT solutions for startups and enterprises, focusing on custom software, cloud services, AI, and cybersecurity." />
+  <meta name="twitter:image" content="https://www.blinke.in/static/logo.png" />
+  <meta name="twitter:site" content="@blinke_in" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary-color: #0d1633;
+      --gold: #d4af37;
+      --background-color: #f5f5f5;
+      --text-color: #ffffff;
+      --mobile-menu-bg: #0b1129;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--background-color);
+      color: #2e2e2e;
+      padding-top: 70px; /* avoid overlap with fixed-top navbar */
+    }
+
+    .navbar {
+      background-color: var(--primary-color);
+    }
+
+    .navbar-brand {
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 1.7rem;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .navbar-brand img {
+      height: 40px;
+      margin-right: 12px;
+      filter: drop-shadow(0 0 2px var(--gold));
+    }
+
+    .navbar-nav .nav-link {
+      color: var(--text-color);
+      font-weight: 600;
+      padding: 0.8rem 1rem;
+    }
+
+    .nav-link:hover {
+      color: var(--gold);
+    }
+
+    .btn-signin, .btn-getstarted {
+      margin-right: 0.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-signin {
+      border: 2px solid var(--gold);
+      color: var(--gold);
+      background: transparent;
+    }
+
+    .btn-signin:hover {
+      background-color: var(--gold);
+      color: var(--primary-color);
+    }
+
+    .btn-getstarted {
+      background-color: var(--gold);
+      color: var(--primary-color);
+      border: none;
+      box-shadow: 0 6px 15px rgba(212, 175, 55, 0.6);
+    }
+
+    .btn-getstarted:hover {
+      background-color: #b38720;
+      color: #fff;
+    }
+
+    footer {
+      background-color: var(--primary-color);
+    }
+
+    .text-gold {
+      color: var(--gold);
+    }
+
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    .offcanvas {
+      background-color: var(--mobile-menu-bg);
+    }
+
+    .navbar-toggler-icon {
+      display: none;
+    }
+
+    .custom-toggler-bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      background-color: var(--gold);
+      transition: all 0.3s ease;
+      border-radius: 1px;
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+
+    .blinke-b {
+      color: white;
+      font-weight: 900;
+      font-size: 2.1rem;
+      margin-right: 1px;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+    }
+
+    .blinke-logo {
+      font-size: 1.9rem;
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+
+    .alert {
+      display: block !important;
+      opacity: 1 !important;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <span class="blinke-logo">
+        <span class="blinke-b">B</span>linke
+      </span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="custom-toggler-bar"></span>
+      <span class="custom-toggler-bar"></span>
+      <span class="custom-toggler-bar"></span>
+    </button>
+
+    <div class="offcanvas offcanvas-end w-75 w-md-50" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title text-gold" id="offcanvasNavbarLabel">Menu</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+          <!-- Main navigation links -->
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+              <li><a class="dropdown-item" href="#">Custom Software</a></li>
+              <li><a class="dropdown-item" href="#">Cloud Solutions</a></li>
+              <li><a class="dropdown-item" href="#">AI & Automation</a></li>
+              <li><a class="dropdown-item" href="#">Cybersecurity</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url "contact" %}">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'careers' %}">Careers</a></li>
+
+          <!-- Legal dropdown moved here if you want it in navbar -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="legalDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Legal
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="legalDropdown">
+              <li><a class="dropdown-item" href="{% url 'terms' %}">Terms of Service</a></li>
+              <li><a class="dropdown-item" href="{% url 'privacy' %}">Privacy Policy</a></li>
+              <li><a class="dropdown-item" href="{% url 'refund' %}">Refund Policy</a></li>
+            </ul>
+          </li>
+
+          <!-- Authentication Buttons -->
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <form method="post" action="{% url 'logout' %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-signin mt-2">Logout</button>
+            </form>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="btn btn-signin mt-2 me-2" href="{% url 'login' %}">Sign In</a>
+            <a class="btn btn-getstarted mt-2" href="{% url 'signup' %}">Get Started</a>
+          </li>
+          {% endif %}
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Messages Alert Display -->
+{% if messages %}
+  <div class="position-fixed w-100 d-flex justify-content-center mt-3" style="z-index: 9999;">
+    <div class="container">
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show shadow" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+<!-- Content Block -->
+{% block content %}{% endblock %}
+
+<footer class="text-white pt-5 pb-4 mt-5">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-4 mb-4">
+        <h5 class="text-gold mb-3">Blinke Technologies</h5>
+        <p>Innovative IT solutions for startups and enterprises.</p>
+        <p><small>© {{ current_year }} Blinke Technologies. All rights reserved.</small></p>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <h5 class="text-gold mb-3">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="/" class="text-white text-decoration-none">Home</a></li>
+          <li><a href="/services" class="text-white text-decoration-none">Services</a></li>
+          <li><a href="/about" class="text-white text-decoration-none">About Us</a></li>
+          <li><a href="/products" class="text-white text-decoration-none">Products</a></li>
+          <li><a href="/blog" class="text-white text-decoration-none">Blog</a></li>
+          <li><a href="/contact" class="text-white text-decoration-none">Contact</a></li>
+          <li><a href="{% url 'privacy' %}" class="text-white text-decoration-none">Privacy Policy</a></li>
+          <li><a href="{% url 'terms' %}" class="text-white text-decoration-none">Terms of Service</a></li>
+          <li><a href="{% url 'refund' %}" class="text-white text-decoration-none">Refund Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <h5 class="text-gold mb-3">Contact Us</h5>
+        <p>Email: <a href="mailto:info@blinketechnologies.com" class="text-white">hello@blinke.in</a></p>
+        <p>Phone: <a href="tel:+911234567890" class="text-white">+91 9209107209</a></p>
+        <p>Address:  Unit#214, Hema Industries, Police Station Rd, near Meghwadi, Income Tax Colony, Indira Nagar, Jogeshwari East, Mumbai, Maharashtra 400060</p>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap & AOS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true });
+</script>
+
+</body>
+</html>

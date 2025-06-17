@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load socialaccount %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh; margin-top: 100px;">
+  <div class="card shadow-lg p-4 w-100" style="max-width: 450px;">
+    <h3 class="mb-4 text-center">📝 Create Your Account</h3>
+
+    <form method="POST" novalidate>
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="name@example.com" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Enter password" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="confirm_password" class="form-label">Confirm Password</label>
+        <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="Re-enter password" required>
+      </div>
+
+      <button type="submit" class="btn btn-success w-100 mt-2">Create Account</button>
+    </form>
+
+    <div class="text-center my-3 text-muted">or continue with</div>
+
+    <div class="d-grid gap-2">
+      <a href="{% provider_login_url 'google' process='login' %}" class="btn btn-outline-danger">
+        <i class="fab fa-google me-2"></i>Continue with Google
+      </a>
+      <a href="{% provider_login_url 'github' process='login' %}" class="btn btn-outline-dark">
+        <i class="fab fa-github me-2"></i>Continue with GitHub
+      </a>
+      <a href="{% provider_login_url 'facebook' process='login' %}" class="btn btn-outline-primary">
+        <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
+      </a>
+    </div>
+
+    <div class="text-center mt-4">
+      Already have an account?
+      <a href="{% url 'login' %}">Login</a>
+    </div>
+  </div>
+</div>
+
+<!-- Add Font Awesome if not already in base.html -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+{% endblock %}

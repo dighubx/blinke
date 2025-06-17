@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="py-5 bg-light position-relative">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left image -->
+      <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+        <img src="https://www.shutterstock.com/image-photo/human-holding-call-center-on-600nw-2422082399.jpg" alt="Contact Us" class="img-fluid rounded-4 shadow">
+      </div>
+
+      <!-- Right form -->
+      <div class="col-lg-6" data-aos="fade-left">
+        <h2 class="fw-bold mb-4" style="color: #0d1633;">Get in Touch</h2>
+        <p class="text-muted mb-4">Have a project in mind? Need support? Just want to say hello? We're here to help.</p>
+
+        <!-- Messages -->
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+          {% endfor %}
+        {% endif %}
+
+        <!-- Contact Form -->
+        <form method="post" novalidate>
+          {% csrf_token %}
+          <div class="mb-3">
+            <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+          </div>
+          <div class="mb-3">
+            <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+          </div>
+          <div class="mb-3">
+            <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-getstarted">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

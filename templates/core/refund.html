@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+  .refund-section {
+    background-color: #f4f6fa;
+    padding: 80px 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .refund-wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .refund-wrapper h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #0d1633;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .refund-wrapper h5 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #212529;
+    margin-top: 40px;
+  }
+
+  .refund-wrapper p,
+  .refund-wrapper ul {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.8;
+    margin-top: 10px;
+  }
+
+  .refund-wrapper ul {
+    padding-left: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .refund-wrapper ul li {
+    margin-bottom: 6px;
+  }
+
+  .refund-wrapper a {
+    color: #0d6efd;
+    text-decoration: underline;
+  }
+
+  .refund-updated {
+    margin-top: 60px;
+    text-align: right;
+    font-size: 0.9rem;
+    color: #888;
+  }
+
+  @media (max-width: 768px) {
+    .refund-wrapper h2 {
+      font-size: 2rem;
+    }
+
+    .refund-wrapper h5 {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+
+<section class="refund-section" data-aos="fade-up">
+  <div class="refund-wrapper">
+    <h2>Refund Policy</h2>
+
+    <p>
+      At Blinke Technologies, we aim to deliver high-quality digital solutions. However, we understand there may be situations where a refund is requested. Please review our refund policy below.
+    </p>
+
+    <h5>1. Eligibility for Refund</h5>
+    <p>
+      Refunds may be requested within 7 days of purchase or project kickoff, provided no significant development work or consultation has occurred.
+    </p>
+
+    <h5>2. Services That Are Non-Refundable</h5>
+    <ul>
+      <li>Completed custom software or digital products</li>
+      <li>Design and branding services already delivered</li>
+      <li>Monthly subscription plans after renewal</li>
+    </ul>
+
+    <h5>3. How to Request a Refund</h5>
+    <p>
+      To request a refund, please email <a href="mailto:support@blinketech.com">support@blinketech.com</a> with your order/project details. Our team will evaluate the request within 3–5 business days.
+    </p>
+
+    <h5>4. Processing Time</h5>
+    <p>Approved refunds will be processed via the original payment method within 7 business days.</p>
+  </div>
+</section>
+{% endblock %}

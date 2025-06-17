@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+  .terms-section {
+    background-color: #f4f6fa;
+    padding: 80px 0;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .terms-wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .terms-wrapper h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #0d1633;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .terms-wrapper h5 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #212529;
+    margin-top: 40px;
+  }
+
+  .terms-wrapper p {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.8;
+    margin-top: 10px;
+  }
+
+  .terms-updated {
+    margin-top: 60px;
+    text-align: right;
+    font-size: 0.9rem;
+    color: #888;
+  }
+
+  @media (max-width: 768px) {
+    .terms-wrapper h2 {
+      font-size: 2rem;
+    }
+    .terms-wrapper h5 {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+
+<section class="terms-section" data-aos="fade-up">
+  <div class="terms-wrapper">
+    <h2>Terms of Service</h2>
+
+    <p>
+      Welcome to Blinke Technologies. By accessing or using our website and services, you agree to be bound by the following terms and conditions. If you do not agree with any part of these terms, please do not use our services.
+    </p>
+
+    <h5>1. Use of Services</h5>
+    <p>Our services are intended for lawful purposes only. You agree not to misuse or attempt to disrupt our services.</p>
+
+    <h5>2. Intellectual Property</h5>
+    <p>All content, branding, and software developed or presented by Blinke is our intellectual property. You may not copy, reproduce, or distribute any part of our content without permission.</p>
+
+    <h5>3. Limitation of Liability</h5>
+    <p>Blinke Technologies is not liable for any damages or losses arising from your use or inability to use our services.</p>
+
+    <h5>4. Modifications</h5>
+    <p>We reserve the right to update or change these terms at any time. It is your responsibility to review them periodically.</p>
+
+    <h5>5. Governing Law</h5>
+    <p>These terms are governed by the laws of India. Any disputes shall be subject to the jurisdiction of courts located in India.</p>
+  </div>
+</section>
+{% endblock %}
