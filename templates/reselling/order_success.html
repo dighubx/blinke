@@ -1,0 +1,12 @@
+{% extends 'reselling/reselling_base.html' %}
+{% block title %}Order Success{% endblock %}
+
+{% block content %}
+<section class="py-5 text-center">
+  <div class="container">
+    <h2 class="fw-bold text-success">🎉 Order Placed Successfully!</h2>
+    <p class="mt-3">Thank you for choosing Blinke. We'll contact you shortly.</p>
+    <a href="{% url 'reselling:reselling_home' %}" class="btn btn-outline-primary mt-3">Back to Home</a>
+  </div>
+</section>
+{% endblock %}

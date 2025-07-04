@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-g3su_&fd@&#(w0usb(@8(7$$#72dv*u^x@*)6yhm_3n8rspqj7'
 DEBUG = False
-ALLOWED_HOSTS = ['your.server.ip', 'blinke.in']
+ALLOWED_HOSTS = ['your.server.ip', 'blinke.in',]
 
 
 # Application definition
@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     # Custom apps
     'accounts',
     'core',
+    'reselling',
 
     # Allauth core
     'django.contrib.sites',
@@ -35,6 +36,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.facebook',
+
+
 ]
 
 MIDDLEWARE = [
@@ -154,4 +157,16 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
+
+# settings email
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.zeptomail.in'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+
+EMAIL_HOST_USER = 'emailapikey'
+EMAIL_HOST_PASSWORD = 'PHtE6r0FS+HsjGcqoBJVs/GxFsagY4h9q7g2LwZPsYgRD6NVSk0G/4otkWWzq017UqRAEfPPy445uenI4rrUJDvuPGdMWWqyqK3sx/VYSPOZsbq6x00ZsVUZdEPYUoDoetdp3SzWud+X'
+
+DEFAULT_FROM_EMAIL = 'admin@adminadda.com'  # Your verified ZeptoMail sender
 

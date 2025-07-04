@@ -1,0 +1,29 @@
+{% extends 'reselling/reselling_base.html' %}
+{% load static %}
+
+{% block title %}{{ category.name }} Plans – Blinke Reselling{% endblock %}
+
+{% block content %}
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="fw-bold mb-4">{{ category.name }} Plans</h2>
+
+    {% if plans %}
+    <div class="row g-4">
+      {% for plan in plans %}
+      <div class="col-md-4">
+        <div class="bg-white border rounded p-4 h-100 shadow-sm">
+          <h5 class="text-dark">{{ plan.title }}</h5>
+          <h6 class="text-warning">₹{{ plan.price }}</h6>
+          <p class="text-muted small">{{ plan.features|truncatechars:120|linebreaks }}</p>
+          <a href="{% url 'reselling:plan_detail' plan.slug %}" class="btn btn-outline-primary btn-sm mt-2">View Details</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p>No plans found in this category.</p>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

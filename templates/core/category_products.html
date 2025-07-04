@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="fw-bold mb-4 text-center">{{ category.name }}</h2>
+
+    <div class="row g-4">
+      {% for product in products %}
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="bg-white p-3 rounded shadow-sm h-100 d-flex flex-column">
+          {% if product.image %}
+            <img src="{{ product.image.url }}" class="img-fluid rounded mb-2" alt="{{ product.name }}">
+          {% endif %}
+          <h6 class="fw-bold">{{ product.name }}</h6>
+          <p class="small text-muted">{{ product.description|truncatewords:15 }}</p>
+          <p class="fw-semibold text-gold">₹{{ product.price }}</p>
+          <a href="{% url 'contact' %}?product={{ product.name }}" class="btn btn-sm btn-outline-primary mt-auto w-100">Inquire</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% endblock %}

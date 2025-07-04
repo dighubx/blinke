@@ -33,6 +33,7 @@
   <meta name="twitter:site" content="@blinke_in" />
 
   <!-- Bootstrap 5 CSS -->
+   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
 
@@ -148,7 +149,7 @@
     .blinke-b {
       color: white;
       font-weight: 900;
-      font-size: 2.1rem;
+      font-size: 1.9rem;
       margin-right: 1px;
       text-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
     }
@@ -165,82 +166,75 @@
       display: block !important;
       opacity: 1 !important;
     }
-    .category-slider {
-  scrollbar-width: none; /* Firefox */
-}
-.category-slider::-webkit-scrollbar {
-  display: none; /* Chrome */
-}
   </style>
 </head>
 
 <body>
 
-<!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
     <a class="navbar-brand" href="/">
       <span class="blinke-logo">
-        <span class="blinke-b">B</span>linke
+        <span class="blinke-b">B</span>linke Hosting
       </span>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="custom-toggler-bar"></span>
       <span class="custom-toggler-bar"></span>
       <span class="custom-toggler-bar"></span>
     </button>
-    <div class="offcanvas offcanvas-end w-75 w-md-50" tabindex="-1" id="offcanvasNavbar">
+
+    <div class="offcanvas offcanvas-end w-75 w-md-50" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title text-gold">Menu</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        <h5 class="offcanvas-title text-gold" id="offcanvasNavbarLabel">Menu</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+          <!-- Main navigation links -->
           <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
-          <li class="nav-item dropdown dropdown-hover">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Backup</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{% url "backup_plans" %}">Cloud Backup</a></li>
-              <li><a class="dropdown-item" href="{% url "backup_plans" %}">Device Backup</a></li>
-              <li><a class="dropdown-item" href="{% url "backup_plans" %}">Business Continuity</a></li>
-              <li><a class="dropdown-item" href="{% url "backup_plans" %}">Enterprise Solutions</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown dropdown-hover">
-            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">Services</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Custom Software</a></li>
-              <li><a class="dropdown-item" href="{% url 'reselling:reselling_home' %}">Cloud Solutions</a></li>
-              <li><a class="dropdown-item" href="#">AI & Automation</a></li>
-              <li><a class="dropdown-item" href="#">Cybersecurity</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-          <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="{% url 'careers' %}">Careers</a></li>
-          <li class="nav-item dropdown dropdown-hover">
-            <a class="nav-link dropdown-toggle" href="#" id="legalDropdown" role="button" data-bs-toggle="dropdown">Legal</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{% url 'terms' %}">Terms of Service</a></li>
-              <li><a class="dropdown-item" href="{% url 'privacy' %}">Privacy Policy</a></li>
-              <li><a class="dropdown-item" href="{% url 'refund' %}">Refund Policy</a></li>
-            </ul>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="/about">Hosting</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about">Domains</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about">SSL</a></li>
+          <li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle" href="#" id="serviceDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Services
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="serviceDropdown">
+    {% for cat in categories %}
+      <li>
+        <a class="dropdown-item" href="{% url 'reselling:category_detail' cat.slug %}">
+          {{ cat.name }}
+        </a>
+      </li>
+    {% endfor %}
+    <li><hr class="dropdown-divider"></li>
+    <li>
+      <a class="dropdown-item text-primary fw-bold" href="{% url 'reselling:reselling_home' %}">
+        View All Services
+      </a>
+    </li>
+  </ul>
+</li>
+          <li class="nav-item"><a class="nav-link" href="/about">My Orders</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about">Support</a></li>
+          <!-- Authentication Buttons -->
           {% if user.is_authenticated %}
-            <li class="nav-item">
-              <form method="post" action="{% url 'logout' %}">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-signin mt-2">Logout</button>
-              </form>
-            </li>
+          <li class="nav-item">
+            <form method="post" action="{% url 'logout' %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-signin mt-2">Logout</button>
+            </form>
+          </li>
           {% else %}
-            <li class="nav-item">
-              <a class="btn btn-signin mt-2 me-2" href="{% url 'login' %}">Sign In</a>
-              <a class="btn btn-getstarted mt-2" href="{% url 'signup' %}">Get Started</a>
-            </li>
+          <li class="nav-item">
+            <a class="btn btn-signin mt-2 me-2" href="{% url 'login' %}">Sign In</a>
+            <a class="btn btn-getstarted mt-2" href="{% url 'signup' %}">Get Started</a>
+          </li>
           {% endif %}
+
         </ul>
       </div>
     </div>
@@ -292,7 +286,7 @@
       <div class="col-md-4 mb-4">
         <h5 class="text-gold mb-3">Contact Us</h5>
         <p>Email: <a href="mailto:info@blinketechnologies.com" class="text-white">hello@blinke.in</a></p>
-        {% comment %} <p>Phone: <a href="tel:+911234567890" class="text-white">+91 9209107209</a></p> {% endcomment %}
+        <p>Phone: <a href="tel:+911234567890" class="text-white">+91 9209107209</a></p>
         <p>Address:  Unit#214, Hema Industries, Police Station Rd, near Meghwadi, Income Tax Colony, Indira Nagar, Jogeshwari East, Mumbai, Maharashtra 400060</p>
       </div>
 
