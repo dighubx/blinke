@@ -9,6 +9,27 @@ from .models import Inquiry
 def landing_page(request):
     return render(request, 'core/home.html')
 
+def acronis_backup_view(request):
+    features = [
+        'AI-Based Threat Detection',
+        'Bare-metal Recovery',
+        'Cloud Console Access',
+        'AES-256 Encryption',
+        'Real-Time Backup Sync',
+        'Multiple OS Support',
+    ]
+
+    plans = [
+        ('Starter', '₹499/mo', '100GB Cloud'),
+        ('Business', '₹1,299/mo', '500GB + Local Option'),
+        ('Enterprise', '₹2,499/mo', '1TB + Advanced AI & Ransomware Protection'),
+    ]
+
+    return render(request, 'core/acronis.html', {
+        'features': features,
+        'plans': plans,
+    })
+
 def contact_view(request):
     if request.method == 'POST':
         name = request.POST.get('name')

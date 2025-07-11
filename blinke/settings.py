@@ -8,7 +8,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-g3su_&fd@&#(w0usb(@8(7$$#72dv*u^x@*)6yhm_3n8rspqj7'
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['your.server.ip', 'blinke.in',]
 
 

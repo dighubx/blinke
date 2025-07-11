@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import *
+from .views import*
 from . import views
+from .views import acronis_backup_view
 
 urlpatterns = [
     path('', landing_page, name='home'),
@@ -13,5 +14,7 @@ urlpatterns = [
     path('backup-plans/', views.backup_plans, name='backup_plans'),
     path('backup/<slug:slug>/', views.category_products_view, name='category_products'),
     path('submit-inquiry/', views.submit_inquiry, name='submit_inquiry'),
+    path('acronis-backup/', acronis_backup_view, name='acronis_backup'),
+
 
 ]

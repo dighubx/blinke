@@ -1,0 +1,380 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- ✅ HERO SECTION -->
+<section class="hero-section py-5 d-flex justify-content-center align-items-center" style="position: relative; height: 80vh; overflow: hidden;">
+  <div class="hero-bg-overlay"></div>
+  <div class="hero-bg" style="background-image: url('https://staticfiles.acronis.com/images/background/98689c7a4939726c18afc31a750d0431.webp'); background-size: cover; background-position: center center; position: absolute; top: 0; left: 0; right: 0; bottom: 0; filter: blur(4px); z-index: -1;"></div>
+  <div class="container text-center text-white position-relative" style="z-index: 2;">
+    <h1 class="display-4 fw-bold hero-heading mb-3" data-aos="fade-up">Acronis Cloud Backup for Blinke Clients</h1>
+    <p class="lead mb-4 hero-subheading" data-aos="fade-up" data-aos-delay="150">Ultimate data protection, business continuity & recovery with next-gen cloud solutions.</p>
+    <a href="#" class="btn btn-warning btn-lg mt-4" data-aos="fade-up" data-aos-delay="300" data-bs-toggle="modal" data-bs-target="#inquiryModal">Get Started with Acronis</a>
+  </div>
+</section>
+
+<!-- ✅ WHY ACRONIS SECTION -->
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4" data-aos="fade-up">Why Choose Acronis?</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="p-4 shadow rounded bg-white h-100">
+          <i class="bi bi-shield-lock fs-2 text-primary mb-3"></i>
+          <h5>Cyber Protection</h5>
+          <p>All-in-one backup and anti-ransomware shield for your cloud data, systems, and devices.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="p-4 shadow rounded bg-white h-100">
+          <i class="bi bi-speedometer2 fs-2 text-primary mb-3"></i>
+          <h5>Blazing Fast Recovery</h5>
+          <p>Get back up and running in minutes — not hours. Minimize downtime and losses.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="p-4 shadow rounded bg-white h-100">
+          <i class="bi bi-cloud-check fs-2 text-primary mb-3"></i>
+          <h5>Cloud + Hybrid Ready</h5>
+          <p>Store backups on the cloud, local servers, or both. Flexible architecture for all use-cases.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ✅ ZIG-ZAG FEATURES -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5" data-aos="fade-up">Why Blinke Trusts Acronis</h2>
+
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6" data-aos="fade-right">
+        <img src="https://staticfiles.acronis.com/images/content/3bb41b7ea9ae3e27b924ecd697d102f1.webp" alt="AI Shield" class="img-fluid p-3">
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <h4 class="fw-bold">AI-Based Threat Detection</h4>
+        <p class="text-muted">Advanced AI algorithms detect and neutralize ransomware, zero-day threats, and malware in real-time before they compromise your business-critical data.</p>
+      </div>
+    </div>
+
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6" data-aos="fade-left">
+        <img src="https://staticfiles.acronis.com/images/content/a74a37f78fe97a1a1a8181436f4c08a4.webp" alt="Recovery" class="img-fluid p-3">
+      </div>
+      <div class="col-md-6" data-aos="fade-right">
+        <h4 class="fw-bold">Bare-metal Recovery</h4>
+        <p class="text-muted">Restore your entire system from scratch with just one click — including OS, applications, settings, and files — onto new or existing hardware.</p>
+      </div>
+    </div>
+
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6" data-aos="fade-right">
+        <img src="https://acronis.my.salesforce.com/sfc/dist/version/download/?oid=00D300000000Zcb&ids=0681T00000RqKFR&d=%2Fa%2F1T000001CaRe%2FqEyQ53qUWv2b4h2IpDksWXV8WUbxR.mWvU3vru4v7TE&asPdf=false" alt="Cloud Console" class="img-fluid p-3">
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <h4 class="fw-bold">Cloud Console Access</h4>
+        <p class="text-muted">Manage, monitor, and configure all your backups from a single intuitive cloud dashboard — anytime, anywhere, from any device.</p>
+      </div>
+    </div>
+
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6" data-aos="fade-left">
+      <img src="https://static.beebom.com/wp-content/uploads/2020/11/4-what-is-military-grade-encryption.jpg" alt="Sync" class="img-fluid p-3">
+
+      </div>
+      <div class="col-md-6" data-aos="fade-right">
+        <h4 class="fw-bold">Military-Grade AES-256 Encryption</h4>
+        <p class="text-muted">All data is encrypted during transit and at rest with bank-level AES-256 encryption, ensuring total confidentiality and compliance.</p>
+      </div>
+    </div>
+
+    <div class="row align-items-center mb-5">
+      <div class="col-md-6" data-aos="fade-right">
+        <img src="https://staticfiles.acronis.com/images/content/c6465bc1653a7e06c06ae59b960eddfe.webp" alt="Sync" class="img-fluid p-3">
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <h4 class="fw-bold">Real-Time Backup Sync</h4>
+        <p class="text-muted">Never lose a file again. Acronis continuously syncs and backs up your data in real-time to the cloud or your selected destination.</p>
+      </div>
+    </div>
+
+    <div class="row align-items-center mb-5 flex-md-row-reverse">
+      <div class="col-md-6" data-aos="fade-left">
+        <img src="https://staticfiles.acronis.com/images/content/345e1db7d435469d9b89ee5de3595638.webp" alt="Devices" class="img-fluid p-3">
+      </div>
+      <div class="col-md-6" data-aos="fade-right">
+        <h4 class="fw-bold">Multiple OS & Device Support</h4>
+        <p class="text-muted">Protect everything — Windows, macOS, Linux, iOS, Android, VMs, and more — from one powerful solution built for scale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ COMPLETE PROTECTION SECTION (FI Icons Only) -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5" data-aos="fade-up">Complete Protection for Modern-Day Threats</h2>
+    
+    <div class="row g-4 text-center">
+      
+      <div class="col-md-4" data-aos="zoom-in">
+        <div class="p-4 bg-white shadow-sm rounded h-100">
+          <i class="bi bi-shield-lock text-primary fs-1 mb-3"></i>
+          <h5 class="fw-bold">Ransomware Defense</h5>
+          <p class="text-muted">AI-based detection & auto-recovery for ransomware attacks. Stay one step ahead.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+        <div class="p-4 bg-white shadow-sm rounded h-100">
+          <i class="bi bi-cloud-check text-primary fs-1 mb-3"></i>
+          <h5 class="fw-bold">Cloud Integrity Guard</h5>
+          <p class="text-muted">Ensure your cloud backups remain untampered with advanced validation.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="p-4 bg-white shadow-sm rounded h-100">
+          <i class="bi bi-laptop text-primary fs-1 mb-3"></i>
+          <h5 class="fw-bold">Endpoint Protection</h5>
+          <p class="text-muted">Secure every device across your organization, whether remote or in-office.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+        <div class="p-4 bg-white shadow-sm rounded h-100">
+          <i class="bi bi-lock-fill text-primary fs-1 mb-3"></i>
+          <h5 class="fw-bold">AES-256 Encryption</h5>
+          <p class="text-muted">Military-grade encryption during backup, transit, and storage — fully compliant.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+        <div class="p-4 bg-white shadow-sm rounded h-100">
+          <i class="bi bi-cpu text-primary fs-1 mb-3"></i>
+          <h5 class="fw-bold">AI-Based Threat Detection</h5>
+          <p class="text-muted">Leverage real-time anomaly detection powered by machine learning algorithms.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="zoom-in" data-aos-delay="500">
+        <div class="p-4 bg-white shadow-sm rounded h-100">
+          <i class="bi bi-arrow-clockwise text-primary fs-1 mb-3"></i>
+          <h5 class="fw-bold">Instant Disaster Recovery</h5>
+          <p class="text-muted">Boot-from-backup recovery in minutes — minimize downtime during breaches.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ✅ PRICING -->
+<section class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4" data-aos="fade-up">Simple, Transparent Pricing</h2>
+    <div class="row g-4">
+      
+      <!-- Starter Plan -->
+      <div class="col-md-4" data-aos="flip-left">
+        <div class="card shadow border-0 h-100">
+          <div class="card-body">
+            <img src="https://staticfiles.acronis.com/images/content/ab0c1ccffd1e7407e0d2e748986c5701.webp" alt="Starter Plan" class="mb-3" height="160">
+            <h5 class="card-title">Starter</h5>
+            <h3 class="text-gold">₹499/mo</h3>
+            <p class="text-muted">100GB Cloud</p>
+            <a href="#" class="btn btn-outline-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#inquiryModal">Choose Plan</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Business Plan -->
+      <div class="col-md-4" data-aos="flip-left" data-aos-delay="100">
+        <div class="card shadow border-0 h-100">
+          <div class="card-body">
+            <img src="https://staticfiles.acronis.com/images/content/9fdf7c445e05eea0444538d0daa22175.webp" alt="Business Plan" class="mb-3" height="160">
+            <h5 class="card-title">Business</h5>
+            <h3 class="text-gold">₹1,299/mo</h3>
+            <p class="text-muted">500GB + Local Option</p>
+            <a href="#" class="btn btn-outline-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#inquiryModal">Choose Plan</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enterprise Plan -->
+      <div class="col-md-4" data-aos="flip-left" data-aos-delay="200">
+        <div class="card shadow border-0 h-100">
+          <div class="card-body">
+            <img src="https://staticfiles.acronis.com/images/content/aeefb4252581f428ac381ac2a39ad1a6.webp" alt="Enterprise Plan" class="mb-3" height="160">
+            <h5 class="card-title">Enterprise</h5>
+            <h3 class="text-gold">₹2,499/mo</h3>
+            <p class="text-muted">1TB + Advanced AI & Ransomware Protection</p>
+            <a href="#" class="btn btn-outline-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#inquiryModal">Choose Plan</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ✅ VIDEO DEMO SECTION -->
+<section class="py-5 bg-dark text-white" data-aos="fade-up" id="acronis-video">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">Watch How Acronis Works</h2>
+    <p class="mb-4 text-muted text-light">Experience intelligent backup & cyber protection in action.</p>
+
+    <div class="ratio ratio-16x9 rounded shadow-lg overflow-hidden" style="max-width: 900px; margin: 0 auto;">
+      <iframe 
+        src="https://www.youtube.com/embed/3GsZyHx0zb0" 
+        title="Acronis Demo" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <p class="mt-4 text-light small">This video explains how Acronis delivers seamless business continuity for Blinke clients.</p>
+  </div>
+</section>
+
+
+
+<!-- ✅ STATS -->
+<section class="py-5  text-white text-center" style="background-color: #0d1633;">
+  <div class="container">
+    <h2 class="fw-bold mb-4" data-aos="fade-up">Acronis by the Numbers</h2>
+    <div class="row">
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="display-6 fw-bold">20+ Years</h3>
+        <p class="text-muted text-light">Data Protection Legacy</p>
+      </div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="display-6 fw-bold">5M+</h3>
+        <p class="text-muted text-light ">Devices Protected</p>
+      </div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="display-6 fw-bold">30+ DCs</h3>
+        <p class="text-muted text-light">Global Data Centers</p>
+      </div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+        <h3 class="display-6 fw-bold">100%</h3>
+        <p class="text-muted text-light">Data Sovereignty Compliant</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ USE CASES -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5" data-aos="fade-up">Designed for Every Use Case</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="p-4 bg-light h-100 rounded border">
+          <h5 class="fw-bold">IT Infrastructure</h5>
+          <p class="text-muted">Protect servers, NAS devices, virtual machines, and hybrid infrastructure across distributed teams.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="p-4 bg-light h-100 rounded border">
+          <h5 class="fw-bold">SaaS Platforms</h5>
+          <p class="text-muted">Backup Microsoft 365, Google Workspace, and Salesforce data with just one click.</p>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="p-4 bg-light h-100 rounded border">
+          <h5 class="fw-bold">DevOps & Cloud Teams</h5>
+          <p class="text-muted">Deploy Acronis via API, CLI, or integrate into CI/CD workflows using Docker and Kubernetes-ready agents.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ CTA BANNER -->
+<section class="py-5 text-center " style="background-color: var(--main-color);" data-aos="zoom-in">
+  <div class="container">
+    <h2 class="fw-bold">Secure Your Data with Acronis Today</h2>
+    <p class="mb-4">Let Blinke set up your cloud backups with full encryption, AI protection, and 24/7 monitoring.</p>
+    <a href="#" class="btn btn-warning btn-lg"data-bs-toggle="modal" data-bs-target="#inquiryModal">Request Demo</a>
+  </div>
+</section>
+
+<!-- ✅ FAQ -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4" data-aos="fade-up">Frequently Asked Questions</h2>
+    <div class="accordion" id="acronisFAQ">
+      <div class="accordion-item" data-aos="fade-up">
+        <h2 class="accordion-header" id="q1">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1">Is Acronis GDPR compliant?</button>
+        </h2>
+        <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#acronisFAQ">
+          <div class="accordion-body">Yes, Acronis is fully GDPR and HIPAA compliant with global security certifications.</div>
+        </div>
+      </div>
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+        <h2 class="accordion-header" id="q2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2">Can I backup multiple devices?</button>
+        </h2>
+        <div id="a2" class="accordion-collapse collapse" data-bs-parent="#acronisFAQ">
+          <div class="accordion-body">Absolutely. You can configure multiple endpoints (laptops, servers, VMs, etc.).</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Inquiry Modal -->
+<div class="modal fade" id="inquiryModal" tabindex="-1" aria-labelledby="inquiryModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 rounded-3 shadow" style="background-color: #fefefe;">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-bold text-dark" id="inquiryModalLabel">Send an Inquiry</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form method="POST" action="{% url 'submit_inquiry' %}" class="px-3">
+        {% csrf_token %}
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label fw-semibold text-dark">Full Name</label>
+            <input type="text" name="name" class="form-control shadow-sm" placeholder="Your Name" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold text-dark">Email Address</label>
+            <input type="email" name="email" class="form-control shadow-sm" placeholder="you@example.com" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold text-dark">Phone Number</label>
+            <input type="text" name="phone" class="form-control shadow-sm" placeholder="+91 9876543210" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold text-dark">Select Service</label>
+            <select name="service" class="form-select shadow-sm" required>
+              <option value="" disabled selected>Select a Service</option>
+              <option>AI & ML Development</option>
+              <option>Web & Mobile Apps</option>
+              <option>Backup Solutions</option>
+              <option>Custom Software</option>
+              <option>Cloud Solutions</option>
+              <option>Cybersecurity</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label fw-semibold text-dark">Message</label>
+            <textarea name="message" class="form-control shadow-sm" rows="4" placeholder="Write your message here..." required></textarea>
+          </div>
+        </div>
+        <div class="modal-footer border-0 pt-0">
+          <button type="submit" class="btn btn-getstarted w-100">Send Inquiry</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
